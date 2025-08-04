@@ -1,4 +1,4 @@
-bucket_name = "dev-proj-1-remote-state-bucket"
+bucket_name = "dev-proj-1-remote-state-bucket-301971"
 name        = "environment"
 environment = "dev-1"
 
@@ -10,7 +10,5 @@ eu_availability_zone = ["eu-central-1a", "eu-central-1b"]
 
 public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF/YYD/C6ISRjxHc35WZD0YrFPYk5iUKeg+YCSfDcymz smart@smart_sujeeth"
 ec2_ami_id = "ami-01f23391a59163da9"
-
-ec2_user_data_install_apache = ""
 
 domain_name = "codewithjoker.online"
