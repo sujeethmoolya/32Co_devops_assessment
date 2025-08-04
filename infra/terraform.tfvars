@@ -10,3 +10,4 @@ public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF/YYD/C6ISRjxHc35WZD0YrFPYk5i
 ec2_ami_id = "ami-01f23391a59163da9"
 domain_name = "codewithjoker.online"
 ec2_user_data_install_apache = templatefile("./template/ec2_python_application.sh", {})
+ec2_python_application = templatefile("./template/ec2_python_application.sh", {})
