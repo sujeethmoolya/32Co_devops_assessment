@@ -10,4 +10,18 @@ public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF/YYD/C6ISRjxHc35WZD0YrFPYk5i
 ec2_ami_id = "ami-01f23391a59163da9"
 domain_name = "codewithjoker.online"
 ec2_user_data_install_apache = templatefile("./template/ec2_python_application.sh", {})
-ec2_python_application = "${file(\"./template/ec2_python_application.sh\")}"
+ec2_python_application = <<EOF
+#!/bin/bash
+# shellcheck disable=SC2164
+cd /home/ubuntu
+yes | sudo apt update
+yes | sudo apt install python3 python3-pip
+git clone https://github.com/sujeethmoolya/python-mysql-db-proj-1.git
+sleep 20
+# shellcheck disable=SC2164
+cd python-mysql-db-proj-1
+pip3 install -r requirements.txt
+echo 'Waiting for 30 seconds before running the app.py'
+setsid python3 -u app.py &
+sleep 30
+EOF
