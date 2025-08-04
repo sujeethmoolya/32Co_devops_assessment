@@ -1,5 +1,5 @@
 # VARIABLES
-variable "bucket_name" {}
+/* variable "bucket_name" {}
 variable "name" {}
 variable "environment" {}
 
@@ -15,5 +15,5 @@ resource "aws_s3_bucket" "remote_state_bucket" {
     Environment = var.environment
   }
 }
-
+*/
 
