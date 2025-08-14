@@ -9,7 +9,7 @@ yes | sudo apt install python3-flask
 git clone https://github.com/sujeethmoolya/flask_to_aws.git
 sleep 20
 # shellcheck disable=SC2164
-cd python-mysql-db-proj-1
+cd python-flash-application-with-database
 pip3 install -r requirements.txt
 echo 'Waiting for 30 seconds before running the app.py'
 setsid python3 -u app.py &
