@@ -6,6 +6,11 @@ variable "mysql_username" {}
 variable "mysql_password" {}
 variable "mysql_dbname" {}
 
+data "aws_rds_engine_version" "mysql" {
+  engine             = "mysql"
+  preferred_versions = ["8.0.39", "8.0.38", "8.0.37", "8.0.36"]
+}
+
 # RDS Subnet Group
 resource "aws_db_subnet_group" "dev_proje_1_db_subnet_group" {
   name       = var.db_subnet_group_name
@@ -16,7 +21,7 @@ resource "aws_db_instance" "default" {
   allocated_storage       = 10
   storage_type            = "gp2"
   engine                  = "mysql"
-  engine_version          = "8.0.36"
+  engine_version          = data.aws_rds_engine_version.mysql.version
   instance_class          = "db.t3.micro"
   identifier              = var.mysql_db_identifier
   username                = var.mysql_username
