@@ -6,8 +6,7 @@ yes | sudo apt install python3 python3-pip
 yes | sudo apt install python3-pymysql
 sudo apt update
 yes | sudo apt install python3-flask
-git clone https://github.com/sujeethmoolya/flask_to_aws.git
-sleep 20
+git clone https://github.com/sujeethmoolya/python-flash-application-with-database.git
 # shellcheck disable=SC2164
 cd python-flash-application-with-database
 pip3 install -r requirements.txt
